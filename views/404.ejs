@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <%- include("./partials/nav.ejs") %>
+
+    <div
+      class="w-full h-96 text-center flex justify-center items-center flex-col gap-10 bg-gray-100"
+    >
+      <h1 class="text-9xl text-gray-800 font-bold">404</h1>
+      <div>
+        <p class="font-bold text-5xl text-gray-800">There's nothing here.</p>
+        <p class="my-3">
+          Sorry, the page you were looking for in this blog does not exist.
+        </p>
+        <div>
+          <a href="/" class="text-red-500"
+            ><i class="fa-solid fa-home mr-2"></i><span>Home</span></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>
