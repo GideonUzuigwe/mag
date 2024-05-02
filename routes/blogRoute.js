@@ -47,8 +47,22 @@ router.get("/blogs/search/:query", (req, res) => {
         .catch((err) => console.log(err))
 });
 
+//About us Page
 router.get("/about-us", (req, res) => {
-    res.render("about-us", { title: "Uptodate Academy | About Us" });
+    Blog.find().sort({ title: 1 })
+        .then((result) => {
+            res.render("about-us", { title: "Uptodate Academy | About Us", blog: result });
+        })
+        .catch((err) => console.log(err));
+});
+
+//Contact us Page
+router.get("/contact-us", (req, res) => {
+    Blog.find().sort({ title: 1 })
+        .then((result) => {
+            res.render("contact-us", { title: "Uptodate Academy | Contact Us", blog: result });
+        })
+        .catch((err) => console.log(err));
 });
 
 
