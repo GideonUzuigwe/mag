@@ -18,7 +18,7 @@ router.get("/blogs", (req, res) => {
 
 //Get data when user searches a specific term
 router.get("/blog/search", (req, res) => {
-    const query = req.query.postInput;
+    const query = req.query.postInput.toLowerCase();
     Blog.find({ tag: query })
         .then((result) => {
             Blog.find().sort({ title: 1 })
@@ -50,7 +50,7 @@ router.get("/blogs/:id", (req, res) => {
 
 //Get a all blogs from a single tag clicked
 router.get("/blogs/search/:query", (req, res) => {
-    const query = req.params.query;
+    const query = req.params.query.toLowerCase();
     Blog.find({ tag: query })
         .then((result) => {
             Blog.find().sort({ title: 1 })
