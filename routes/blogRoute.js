@@ -6,6 +6,7 @@ router.get("/", (req, res) => {
     res.redirect("/blogs");
 });
 
+//Get the default blog
 router.get("/blogs", (req, res) => {
     Blog.find().sort({ title: 1 })
         .then((result) => {
@@ -15,6 +16,7 @@ router.get("/blogs", (req, res) => {
 
 });
 
+//Get data when user searches a specific term
 router.get("/blog/search", (req, res) => {
     const query = req.query.postInput;
     Blog.find({ tag: query })
