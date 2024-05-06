@@ -46,11 +46,14 @@
       </div>
       <div class="md:block hidden" id="x-header">
         <div>
-          <input
-            class="px-2 py-1 border outline-none border-gray-300 rounded w-full"
-            type="search"
-            placeholder="Search your latest news here"
-          />
+          <form action="/blog/search" method="get">
+            <input
+              class="px-2 py-1 border outline-none border-gray-300 rounded w-full"
+              type="search"
+              placeholder="Search your latest news here"
+              name="postInput"
+            />
+          </form>
         </div>
       </div>
     </nav>

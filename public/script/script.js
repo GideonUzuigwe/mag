@@ -17,16 +17,33 @@ bar.addEventListener("click", (event) => {
     }
 });
 
+// const postInput = document.getElementById("postInput");
+// const searchingForm = document.getElementById("searchingForm");
 
-// const postBtn = document.getElementById("postBtn");
-// postBtn.addEventListener("click", getSearchTerm);
+// postInput.addEventListener("keydown", (e) => {
+//     if (e.key === "Enter") {
+//         searchingForm.submit();
+//     }
+// })
 
-// async function getSearchTerm() {
-//     const postSearch = document.getElementById("postSearch");
-//     if (postSearch.value === "") return alert("Insert a search term!");
-//     const fetchURL = await fetch(`/blogs/search/${postSearch.value}`);
-//     const dataURL = await fetchURL.json();
-//     const resultURL = await dataURL;
 
-//     console.log(resultURL)
-// }
+const searchForm = document.getElementById("searchForm");
+const postBtn = document.getElementById("postBtn");
+postBtn.addEventListener("click", getSearchTerm);
+
+searchForm.addEventListener("submit", e => {
+    e.preventDefault();
+    const postSearch = document.getElementById("postSearch");
+    if (postSearch.value === "") return alert("Insert a search term!")
+    else {
+        searchForm.submit();
+    }
+
+
+})
+
+async function getSearchTerm() {
+
+    const postSearch = document.getElementById("postSearch");
+    if (postSearch.value === "") return alert("Insert a search term!");
+}

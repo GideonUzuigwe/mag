@@ -12,13 +12,19 @@
     >
       <div>
         <div>
-          <form method="post" action="" class="grid gap-4" id="searchForm">
+          <form
+            action="/blog/search"
+            method="get"
+            class="grid gap-4"
+            id="searchForm"
+          >
             <div class="relative">
               <input
                 class="px-10 py-4 bg-transparent w-full border border-gray-50 rounded-full outline-none text-white text-sm capitalize placeholder:text-white"
                 type="search"
                 placeholder="Type a word and hit enter"
                 id="postSearch"
+                name="postInput"
               />
 
               <svg
@@ -273,7 +279,9 @@
             </div>
           </div>
 
-          <% }) %> <% } %>
+          <% }) %> <% }else{ %>
+          <p class="text-gray-500 text-center">No available search result</p>
+          <% } %>
         </div>
         <button
           class="my-0 mx-auto text-red-600 bg-gray-100 border border-gray-300 rounded block py-1 px-5"
